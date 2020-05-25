@@ -12,9 +12,6 @@ BUGS:
 
 objectdef obj_Cargo
 {
-	variable string SVN_REVISION = "$Rev$"
-	variable int Version
-
 	variable index:item MyCargo
 	variable index:item CargoToTransfer
 	variable bool m_LastTransferComplete
@@ -30,7 +27,7 @@ objectdef obj_Cargo
 
 	method Initialize()
 	{
-		UI:UpdateConsole["obj_Cargo: Initialized", LOG_MINOR]
+		Logger:Log["obj_Cargo: Initialized", LOG_MINOR]
 	}
 
 	member:bool LastTransferComplete()
@@ -46,7 +43,6 @@ objectdef obj_Cargo
 
 	function CloseHolds()
 	{
-		return
 		call Ship.CloseCargo
 		call Station.CloseHangar
 	}
@@ -75,37 +71,36 @@ objectdef obj_Cargo
 
 	method DumpItem(item anItem)
 	{
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: BasePrice:         ${anItem.BasePrice}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: Capacity:          ${anItem.Capacity}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: Category:          ${anItem.Category}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: CategoryID:        ${anItem.CategoryID}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: Description:       ${anItem.Description}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: GraphicID:         ${anItem.GraphicID}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: Group:             ${anItem.Group}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: GroupID:           ${anItem.GroupID}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: ID:                ${anItem.ID}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: IsContraband:      ${anItem.IsContraband}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: IsRepackable:      ${anItem.IsRepackable}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: Location:          ${anItem.Location}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: LocationID:        ${anItem.LocationID}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: MacroLocation:     ${anItem.MacroLocation}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: MacroLocationID:   ${anItem.MacroLocationID}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: MarketGroupID:     ${anItem.MarketGroupID}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: Name:              ${anItem.Name}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: OwnerID:           ${anItem.OwnerID}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: PortionSize:       ${anItem.PortionSize}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: Quantity:          ${anItem.Quantity}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: RaceID:            ${anItem.RaceID}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: Radius:            ${anItem.Radius}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: Slot:              ${anItem.Slot}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: SlotID:            ${anItem.SlotID}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: Type:              ${anItem.Type}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: Volume:            ${anItem.Volume}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: GivenName:         ${anItem.Name}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: CargoCapacity:     ${anItem.CargoCapacity}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: UsedCargoCapacity: ${anItem.UsedCargoCapacity}"]
-		UI:UpdateConsole["DEBUG: obj_Cargo: ShipHasContainers: GetCargo:          ${anItem.GetCargo}"]
-		UI:UpdateConsole["========================================================"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: BasePrice:         ${anItem.BasePrice}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: Capacity:          ${anItem.Capacity}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: Category:          ${anItem.Category}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: CategoryID:        ${anItem.CategoryID}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: Description:       ${anItem.Description}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: GraphicID:         ${anItem.GraphicID}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: Group:             ${anItem.Group}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: GroupID:           ${anItem.GroupID}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: ID:                ${anItem.ID}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: IsContraband:      ${anItem.IsContraband}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: IsRepackable:      ${anItem.IsRepackable}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: Location:          ${anItem.Location}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: LocationID:        ${anItem.LocationID}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: MacroLocation:     ${anItem.MacroLocation}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: MacroLocationID:   ${anItem.MacroLocationID}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: MarketGroupID:     ${anItem.MarketGroupID}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: Name:              ${anItem.Name}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: OwnerID:           ${anItem.OwnerID}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: PortionSize:       ${anItem.PortionSize}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: Quantity:          ${anItem.Quantity}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: RaceID:            ${anItem.RaceID}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: Radius:            ${anItem.Radius}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: Slot:              ${anItem.Slot}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: SlotID:            ${anItem.SlotID}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: Type:              ${anItem.Type}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: Volume:            ${anItem.Volume}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: CargoCapacity:     ${anItem.CargoCapacity}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: UsedCargoCapacity: ${anItem.UsedCargoCapacity}"]
+		Logger:Log["DEBUG: obj_Cargo: ShipHasContainers: GetCargo:          ${anItem.GetCargo}"]
+		Logger:Log["========================================================"]
 
 	}
 
@@ -122,12 +117,12 @@ objectdef obj_Cargo
 			variable int CategoryID
 
 			CategoryID:Set[${CargoIterator.Value.CategoryID}]
-			;UI:UpdateConsole["DEBUG: obj_Cargo:FindAllShipCargo: CategoryID: ${CategoryID} ${CargoIterator.Value.ID} ${CargoIterator.Value.Name} - ${CargoIterator.Value.Quantity} (CargoToTransfer.Used: ${This.CargoToTransfer.Used})"]
+			;Logger:Log["DEBUG: obj_Cargo:FindAllShipCargo: CategoryID: ${CategoryID} ${CargoIterator.Value.ID} ${CargoIterator.Value.Name} - ${CargoIterator.Value.Quantity} (CargoToTransfer.Used: ${This.CargoToTransfer.Used})"]
 			This.CargoToTransfer:Insert[${CargoIterator.Value.ID}]
 		}
 		while ${CargoIterator:Next(exists)}
 
-		;UI:UpdateConsole["DEBUG: obj_Cargo:FindAllShipCargo: This.CargoToTransfer Populated: ${This.CargoToTransfer.Used}"]
+		;Logger:Log["DEBUG: obj_Cargo:FindAllShipCargo: This.CargoToTransfer Populated: ${This.CargoToTransfer.Used}"]
 	}
 
 	method FindShipCargo(int CategoryIDToMove)
@@ -143,7 +138,7 @@ objectdef obj_Cargo
 			variable int CategoryID
 
 			CategoryID:Set[${CargoIterator.Value.CategoryID}]
-			;UI:UpdateConsole["DEBUG: obj_Cargo:FindShipCargo: CategoryID: ${CategoryID} ${CargoIterator.Value.ID} ${CargoIterator.Value.Name} - ${CargoIterator.Value.Quantity} (CargoToTransfer.Used: ${This.CargoToTransfer.Used})"]
+			;Logger:Log["DEBUG: obj_Cargo:FindShipCargo: CategoryID: ${CategoryID} ${CargoIterator.Value.ID} ${CargoIterator.Value.Name} - ${CargoIterator.Value.Quantity} (CargoToTransfer.Used: ${This.CargoToTransfer.Used})"]
 
 			if (${CategoryID} == ${CategoryIDToMove})
 			{
@@ -152,7 +147,7 @@ objectdef obj_Cargo
 		}
 		while ${CargoIterator:Next(exists)}
 
-		;UI:UpdateConsole["DEBUG: obj_Cargo:FindShipCargo: This.CargoToTransfer Populated: ${This.CargoToTransfer.Used}"]
+		;Logger:Log["DEBUG: obj_Cargo:FindShipCargo: This.CargoToTransfer Populated: ${This.CargoToTransfer.Used}"]
 	}
 
 	method FindShipCargoByType(int TypeIDToMove)
@@ -168,7 +163,7 @@ objectdef obj_Cargo
 		 variable int TypeID
 
 		 TypeID:Set[${CargoIterator.Value.TypeID}]
-		 ;UI:UpdateConsole["DEBUG: obj_Cargo:FindShipCargo: TypeID: ${TypeID} ${CargoIterator.Value.Name} (${CargoIterator.Value.Quantity}) (CargoToTransfer.Used: ${This.CargoToTransfer.Used})"]
+		 ;Logger:Log["DEBUG: obj_Cargo:FindShipCargo: TypeID: ${TypeID} ${CargoIterator.Value.Name} (${CargoIterator.Value.Quantity}) (CargoToTransfer.Used: ${This.CargoToTransfer.Used})"]
 
 		 if (${TypeID} == ${TypeIDToMove})
 		 {
@@ -177,7 +172,7 @@ objectdef obj_Cargo
 	  }
 	  while ${CargoIterator:Next(exists)}
 
-	  UI:UpdateConsole["DEBUG: obj_Cargo:FindShipCargo: This.CargoToTransfer Populated: ${This.CargoToTransfer.Used}"]
+	  Logger:Log["DEBUG: obj_Cargo:FindShipCargo: This.CargoToTransfer Populated: ${This.CargoToTransfer.Used}"]
    }
 
 	member:int CargoToTransferCount()
@@ -286,7 +281,7 @@ objectdef obj_Cargo
 			{
 				if ${Crystals.CurrentValue} < ${MIN_CRYSTALS}
 				{
-						 UI:UpdateConsole["Out of ${Crystals.CurrentKey} !!"]
+						 Logger:Log["Out of ${Crystals.CurrentKey} !!"]
 				}
 			}
 			while ${Crystals.NextKey(exists)}
@@ -294,9 +289,7 @@ objectdef obj_Cargo
 		else
 		{
 			variable index:item HangarCargo
-			Entity[${from}]:Open
-			wait 30
-			Entity[${from}]:GetCorpHangarsCargo[HangarCargo]
+			Entity[${from}]:GetFleetHangarCargo[HangarCargo]
 			HangarCargo:GetIterator[CargoIterator]
 
 			; Cycle thru the Hangar looking for the needed Crystals and move them to the ship
@@ -342,7 +335,7 @@ objectdef obj_Cargo
 			{
 				if ${Crystals.CurrentValue} < ${MIN_CRYSTALS}
 				{
-						 UI:UpdateConsole["Out of ${Crystals.CurrentKey} !!"]
+						 Logger:Log["Out of ${Crystals.CurrentKey} !!"]
 				}
 			}
 			while ${Crystals.NextKey(exists)}
@@ -382,7 +375,7 @@ objectdef obj_Cargo
 		}
 		else
 		{
-			UI:UpdateConsole["TransferContainerToHangar: Not Supported!! ${CargoIterator.Value.Name}"]
+			Logger:Log["TransferContainerToHangar: Not Supported!! ${CargoIterator.Value.Name}"]
 		}
 	}
 
@@ -392,7 +385,7 @@ objectdef obj_Cargo
 		variable iterator Cargo
 		variable int QuantityToMove
 
-		UI:UpdateConsole["DEBUG: Offloading to GSC"]
+		Logger:Log["DEBUG: Offloading to GSC"]
 
 		MyShip:GetCargo[ShipCargo]
 		ShipCargo:GetIterator[Cargo]
@@ -401,7 +394,7 @@ objectdef obj_Cargo
 		{
 			do
 			{
-				UI:UpdateConsole["MoveGSC: Found ${Cargo.Value.Quantity} x ${Cargo.Value.Name} - ${Entity[${dest}].CargoCapacity} - ${Entity[${dest}].UsedCargoCapacity}"]
+				Logger:Log["MoveGSC: Found ${Cargo.Value.Quantity} x ${Cargo.Value.Name} - ${Entity[${dest}].CargoCapacity} - ${Entity[${dest}].UsedCargoCapacity}"]
 				if (${Cargo.Value.Quantity} * ${Cargo.Value.Volume}) > (${Entity[${dest}].CargoCapacity} - ${Entity[${dest}].UsedCargoCapacity})
 				{
 					QuantityToMove:Set[${Math.Calc[(${Entity[${dest}].CargoCapacity} - ${Entity[${dest}].UsedCargoCapacity}) / ${Cargo.Value.Volume}]}]
@@ -411,7 +404,7 @@ objectdef obj_Cargo
 					QuantityToMove:Set[${Cargo.Value.Quantity}]
 				}
 
-				UI:UpdateConsole["MoveGSC: Moving ${QuantityToMove} units: ${Math.Calc[${QuantityToMove} * ${Cargo.Value.Volume}]}m3"]
+				Logger:Log["MoveGSC: Moving ${QuantityToMove} units: ${Math.Calc[${QuantityToMove} * ${Cargo.Value.Volume}]}m3"]
 				if ${QuantityToMove} > 0
 				{
 					Cargo.Value:MoveTo[${dest},CargoHold,${QuantityToMove}]
@@ -427,7 +420,7 @@ objectdef obj_Cargo
 					/* TODO - this needs to keep a queue of bookmarks, named for the can ie, "Can CORP hh:mm", of partially looted cans */
 					/* Be sure its names, and not ID.  We shouldn't store anything in a bookmark name that we shouldnt know */
 
-					UI:UpdateConsole["MoveGSC: ${Entity[${dest}].CargoCapacity} - ${Entity[${dest}].UsedCargoCapacity} < 1000"]
+					Logger:Log["MoveGSC: ${Entity[${dest}].CargoCapacity} - ${Entity[${dest}].UsedCargoCapacity} < 1000"]
 					break
 				}
 			}
@@ -448,7 +441,6 @@ objectdef obj_Cargo
 		HangarCargo:GetIterator[CargoIterator]
 		call Ship.OpenCargo
 
-		UI:UpdateConsole["DEBUG: TransferListFromShipCorporateHangar", LOG_DEBUG]
 
 		if ${CargoIterator:First(exists)}
 		{
@@ -473,7 +465,7 @@ objectdef obj_Cargo
 		}
 		else
 		{
-			UI:UpdateConsole["DEBUG: obj_Cargo:TransferListFromShipCorporateHangar: Nothing found to move"]
+			Logger:Log["DEBUG: obj_Cargo:TransferListFromShipCorporateHangar: Nothing found to move"]
 			return
 		}
 	}
@@ -486,8 +478,6 @@ objectdef obj_Cargo
 		variable iterator CargoIterator
 		MyShip:GetFleetHangarCargo[HangarCargo]
 		HangarCargo:GetIterator[CargoIterator]
-
-		UI:UpdateConsole["DEBUG: TransferCargoFromShipCorporateHangarToOreHold", LOG_DEBUG]
 
 		if ${CargoIterator:First(exists)}
 		{
@@ -504,17 +494,17 @@ objectdef obj_Cargo
 							QuantityToMove:Set[${CargoIterator.Value.Quantity}]
 						}
 
-						UI:UpdateConsole["TransferCargoFromShipCorporateHangarToOreHold: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name}"]
-						UI:UpdateConsole["TransferCargoFromShipCorporateHangarToOreHold: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
+						Logger:Log["TransferCargoFromShipCorporateHangarToOreHold: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name}"]
+						Logger:Log["TransferCargoFromShipCorporateHangarToOreHold: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
 						if ${QuantityToMove} > 0
 						{
-							CargoIterator.Value:MoveTo[${MyShip.ID}, OreHold, ${QuantityToMove}]
+							CargoIterator.Value:MoveTo[${MyShip.ID}, ShipOreHold, ${QuantityToMove}]
 							wait 15
 						}
 
 						if ${Ship.OreHoldFreeSpace} < ${Ship.OreHoldMinimumFreeSpace}
 						{
-							UI:UpdateConsole["DEBUG: TransferCargoFromShipCorporateHangarToOreHold: Ore Hold: ${Ship.OreHoldFreeSpace} < ${Ship.OreHoldMinimumFreeSpace}"]
+							Logger:Log["DEBUG: TransferCargoFromShipCorporateHangarToOreHold: Ore Hold: ${Ship.OreHoldFreeSpace} < ${Ship.OreHoldMinimumFreeSpace}"]
 							break
 						}
 					}
@@ -523,7 +513,7 @@ objectdef obj_Cargo
 		}
 		else
 		{
-			UI:UpdateConsole["DEBUG: obj_Cargo:TransferCargoFromShipCorporateHangarToOreHold: Nothing found to move"]
+			Logger:Log["DEBUG: obj_Cargo:TransferCargoFromShipCorporateHangarToOreHold: Nothing found to move"]
 		}
 	}
 
@@ -540,9 +530,10 @@ objectdef obj_Cargo
 		{
 				do
 				{
+
 					QuantityToMove:Set[${CargoIterator.Value.Quantity}]
-					UI:UpdateConsole["TransferCargoFromShipOreHoldToStation: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name}"]
-					UI:UpdateConsole["TransferCargoFromShipOreHoldToStation: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
+					Logger:Log["TransferCargoFromShipOreHoldToStation: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name}"]
+					Logger:Log["TransferCargoFromShipOreHoldToStation: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
 					if ${QuantityToMove} > 0
 					{
 						CargoIterator.Value:MoveTo[MyStationHangar, Hangar, ${QuantityToMove}]
@@ -553,12 +544,14 @@ objectdef obj_Cargo
 		}
 		else
 		{
-			UI:UpdateConsole["DEBUG: obj_Cargo:TransferCargoFromShipOreHoldToStation: Nothing found to move"]
+			Logger:Log["DEBUG: obj_Cargo:TransferCargoFromShipOreHoldToStation: Nothing found to move"]
 		}
 	}
 
+
 	function TransferCargoFromShipCorporateHangarToStation()
 	{
+
 		variable index:item HangarCargo
 		variable int QuantityToMove
 		variable iterator CargoIterator
@@ -570,8 +563,8 @@ objectdef obj_Cargo
 				do
 				{
 					QuantityToMove:Set[${CargoIterator.Value.Quantity}]
-					UI:UpdateConsole["TransferCargoFromShipCorporateHangarToStation: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name}"]
-					UI:UpdateConsole["TransferCargoFromShipCorporateHangarToStation: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
+					Logger:Log["TransferCargoFromShipCorporateHangarToStation: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name}"]
+					Logger:Log["TransferCargoFromShipCorporateHangarToStation: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
 					if ${QuantityToMove} > 0
 					{
 						CargoIterator.Value:MoveTo[MyStationHangar, Hangar, ${QuantityToMove}]
@@ -582,9 +575,10 @@ objectdef obj_Cargo
 		}
 		else
 		{
-			UI:UpdateConsole["DEBUG: obj_Cargo:TransferCargoFromShipCorporateHangarToStation: Nothing found to move"]
+			Logger:Log["DEBUG: obj_Cargo:TransferCargoFromShipCorporateHangarToStation: Nothing found to move"]
 		}
 	}
+
 
 	function TransferCargoFromShipCorporateHangarToCargoHold()
 	{
@@ -608,8 +602,8 @@ objectdef obj_Cargo
 						QuantityToMove:Set[${CargoIterator.Value.Quantity}]
 					}
 
-					UI:UpdateConsole["TransferCargoFromShipCorporateHangarToCargoHold: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name}"]
-					UI:UpdateConsole["TransferCargoFromShipCorporateHangarToCargoHold: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
+					Logger:Log["TransferCargoFromShipCorporateHangarToCargoHold: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name}"]
+					Logger:Log["TransferCargoFromShipCorporateHangarToCargoHold: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
 					if ${QuantityToMove} > 0
 					{
 						CargoIterator.Value:MoveTo[${MyShip.ID}, CargoHold, ${QuantityToMove}]
@@ -618,7 +612,7 @@ objectdef obj_Cargo
 
 					if ${Ship.CargoFreeSpace} < ${Ship.CargoMinimumFreeSpace}
 					{
-						UI:UpdateConsole["DEBUG: TransferCargoFromShipCorporateHangarToCargoHold: Ship Cargo: ${Ship.CargoFreeSpace} < ${Ship.CargoMinimumFreeSpace}"]
+						Logger:Log["DEBUG: TransferCargoFromShipCorporateHangarToCargoHold: Ship Cargo: ${Ship.CargoFreeSpace} < ${Ship.CargoMinimumFreeSpace}"]
 						break
 					}
 				}
@@ -626,12 +620,13 @@ objectdef obj_Cargo
 		}
 		else
 		{
-			UI:UpdateConsole["DEBUG: obj_Cargo:TransferCargoFromShipCorporateHangarToCargoHold: Nothing found to move"]
+			Logger:Log["DEBUG: obj_Cargo:TransferCargoFromShipCorporateHangarToCargoHold: Nothing found to move"]
 		}
 	}
 
 	function TransferCargoFromCargoHoldToShipCorporateHangar()
 	{
+
 		variable index:item HangarCargo
 		variable int QuantityToMove
 		variable iterator CargoIterator
@@ -651,8 +646,8 @@ objectdef obj_Cargo
 						QuantityToMove:Set[${CargoIterator.Value.Quantity}]
 					}
 
-					UI:UpdateConsole["TransferCargoFromCargoHoldToShipCorporateHangar: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name} (Free Space: ${Ship.CorpHangarFreeSpace}m3"]
-					UI:UpdateConsole["TransferCargoFromCargoHoldToShipCorporateHangar: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
+					Logger:Log["TransferCargoFromCargoHoldToShipCorporateHangar: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name} (Free Space: ${Ship.CorpHangarFreeSpace}m3"]
+					Logger:Log["TransferCargoFromCargoHoldToShipCorporateHangar: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
 					if ${QuantityToMove} > 0
 					{
 						CargoIterator.Value:MoveTo[${MyShip.ID}, FleetHangar, ${QuantityToMove}]
@@ -663,13 +658,12 @@ objectdef obj_Cargo
 		}
 		else
 		{
-			;UI:UpdateConsole["DEBUG: obj_Cargo:TransferCargoFromCargoHoldToShipCorporateHangar: Nothing found to move"]
+			;Logger:Log["DEBUG: obj_Cargo:TransferCargoFromCargoHoldToShipCorporateHangar: Nothing found to move"]
 		}
 	}
 	; Call TransferListToPOSCorpHangar "LargeShipAssemblyArray"
 	; Call TransferListToPOSCorpHangar "XLargeShipAssemblyArray" etc
 	; Call TransferListToPOSCorpHangar "CorpHangarArray"
-	; CompressionArray
 	function TransferListToPOSCorpHangar(string LSAAObject)
 	{
 		variable float VolumeToMove=0
@@ -688,27 +682,28 @@ objectdef obj_Cargo
 				if (${CargoIterator.Value.Quantity} * ${CargoIterator.Value.Volume}) < ${Math.Calc[${${LSAAObject}.CargoFreeSpace} - ${VolumeToMove}]}
 				{
 					TripHauled:Inc[${Math.Calc[${CargoIterator.Value.Quantity} * ${CargoIterator.Value.Volume}]}]
-					UI:UpdateConsole["TransferListToPOSCorpHangar(${LSAAObject}): Bulk Transferring Cargo: ${CargoIterator.Value.Name} * ${CargoIterator.Value.Quantity} Free Space: ${${LSAAObject}.CargoFreeSpace}"]
+					Logger:Log["TransferListToPOSCorpHangar(${LSAAObject}): Bulk Transferring Cargo: ${CargoIterator.Value.Name} * ${CargoIterator.Value.Quantity} Free Space: ${${LSAAObject}.CargoFreeSpace}"]
 					ListToMove:Insert[${CargoIterator.Value.ID}]
+					CargoIterator.Value:MoveTo[${${LSAAObject}.ActiveCan}, FleetHangar, ${CargoIterator.Value.Quantity}]
 					VolumeToMove:Inc[${Math.Calc[${CargoIterator.Value.Quantity} * ${CargoIterator.Value.Volume}]}]
 				}
 				else
 				{
 					TripHauled:Inc[${Math.Calc[${CargoIterator.Value.Quantity} * ${CargoIterator.Value.Volume}]}]
-					UI:UpdateConsole["TransferListToPOSCorpHangar(${LSAAObject}): Transferring Cargo: ${CargoIterator.Value.Name} * ${CargoIterator.Value.Quantity} Free Space: ${${LSAAObject}.CargoFreeSpace}"]
-					CargoIterator.Value:MoveTo[${${LSAAObject}.ActiveCan}, CorpHangars, ${Math.Calc[(${${LSAAObject}.CargoFreeSpace} - ${VolumeToMove}) / ${CargoIterator.Value.Volume}]}, "Corporation Folder 1"]
+					Logger:Log["TransferListToPOSCorpHangar(${LSAAObject}): Transferring Cargo: ${CargoIterator.Value.Name} * ${CargoIterator.Value.Quantity} Free Space: ${${LSAAObject}.CargoFreeSpace}"]
+					CargoIterator.Value:MoveTo[${${LSAAObject}.ActiveCan}, FleetHangar, ${Math.Calc[(${${LSAAObject}.CargoFreeSpace} - ${VolumeToMove}) / ${CargoIterator.Value.Volume}]}]
 					break
 				}
 			}
 			while ${CargoIterator:Next(exists)}
 			if ${ListToMove.Used}
 			{
-				EVE:MoveItemsTo[ListToMove, ${${LSAAObject}.ActiveCan}, CorpHangars, "Corporation Folder 1"]
+				EVE:MoveItemsTo[ListToMove, ${${LSAAObject}.ActiveCan}, FleetHangar]
 			}
 		}
 		else
 		{
-			UI:UpdateConsole["DEBUG: obj_Cargo:TransferListToPOSCorpHangar(${LSAAObject}): Nothing found to move"]
+			Logger:Log["DEBUG: obj_Cargo:TransferListToPOSCorpHangar(${LSAAObject}): Nothing found to move"]
 			return
 		}
 
@@ -761,7 +756,7 @@ objectdef obj_Cargo
 		}
 		else
 		{
-			UI:UpdateConsole["DEBUG: obj_Cargo:TransferListFromLargeShipAssemblyArray: Nothing found to move"]
+			Logger:Log["DEBUG: obj_Cargo:TransferListFromLargeShipAssemblyArray: Nothing found to move"]
 			return
 		}
 
@@ -798,12 +793,12 @@ objectdef obj_Cargo
 						QuantityToMove:Set[${CargoIterator.Value.Quantity}]
 					}
 
-					UI:UpdateConsole["TransferListToJetCan: Transferring Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name} - Jetcan Free Space: ${JetCan.CargoFreeSpace}"]
+					Logger:Log["TransferListToJetCan: Transferring Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name} - Jetcan Free Space: ${JetCan.CargoFreeSpace}"]
 					CargoIterator.Value:MoveTo[${JetCan.ActiveCan}, CargoHold, ${QuantityToMove}]
 				}
 				else
 				{
-					UI:UpdateConsole["TransferListToJetCan: Ejecting Cargo: ${CargoIterator.Value.Quantity} units of ${CargoIterator.Value.Name}"]
+					Logger:Log["TransferListToJetCan: Ejecting Cargo: ${CargoIterator.Value.Quantity} units of ${CargoIterator.Value.Name}"]
 					CargoIterator.Value:Jettison
 					call JetCan.WaitForCan
 					JetCan:Rename
@@ -814,7 +809,7 @@ objectdef obj_Cargo
 		}
 		else
 		{
-			UI:UpdateConsole["DEBUG: obj_Cargo:TransferListToJetCan: Nothing found to move"]
+			Logger:Log["DEBUG: obj_Cargo:TransferListToJetCan: Nothing found to move"]
 		}
 	}
 
@@ -822,7 +817,7 @@ objectdef obj_Cargo
 	{
 		variable int qty = 0
 
-		UI:UpdateConsole["DEBUG: QuantityToMove: ${src} ${dest}"]
+		Logger:Log["DEBUG: QuantityToMove: ${src} ${dest}"]
 
 		if ${src(exists)}
 		{
@@ -866,7 +861,7 @@ objectdef obj_Cargo
 			}
 		}
 
-		UI:UpdateConsole["DEBUG: QuantityToMove: returning ${qty}"]
+		Logger:Log["DEBUG: QuantityToMove: returning ${qty}"]
 
 		return ${qty}
 	}
@@ -923,8 +918,8 @@ objectdef obj_Cargo
 				}
 				while ${usedSpace} < 0
 				totalSpace:Set[${shipContainerIterator.Value.Capacity}]
-				;;UI:UpdateConsole["DEBUG: TransferListToShipWithContainers: used space = ${usedSpace}"]
-				;;UI:UpdateConsole["DEBUG: TransferListToShipWithContainers: total space = ${totalSpace}"]
+				;;Logger:Log["DEBUG: TransferListToShipWithContainers: used space = ${usedSpace}"]
+				;;Logger:Log["DEBUG: TransferListToShipWithContainers: total space = ${totalSpace}"]
 				if (${This.CargoToTransfer.Get[${idx}].Quantity} * ${This.CargoToTransfer.Get[${idx}].Volume}) > ${Math.Calc[${totalSpace}-${usedSpace}]}
 				{
 					if ${This.CargoToTransfer.Get[${idx}].Volume} > 1.0
@@ -941,10 +936,10 @@ objectdef obj_Cargo
 				{
 					qty:Set[${This.CargoToTransfer.Get[${idx}].Quantity}]
 				}
-				;;UI:UpdateConsole["DEBUG: TransferListToShipWithContainers: quantity = ${qty}"]
+				;;Logger:Log["DEBUG: TransferListToShipWithContainers: quantity = ${qty}"]
 				if ${qty} > 0
 				{
-					UI:UpdateConsole["TransferListToShipWithContainers: Loading Cargo: ${qty} units (${Math.Calc[${qty} * ${This.CargoToTransfer.Get[${idx}].Volume}]}m3) of ${This.CargoToTransfer.Get[${idx}].Name}"]
+					Logger:Log["TransferListToShipWithContainers: Loading Cargo: ${qty} units (${Math.Calc[${qty} * ${This.CargoToTransfer.Get[${idx}].Volume}]}m3) of ${This.CargoToTransfer.Get[${idx}].Name}"]
 					This.CargoToTransfer.Get[${idx}]:MoveTo[${shipContainerIterator.Value.ID}, CargoHold, ${qty}]
 					wait 15
 				}
@@ -958,10 +953,10 @@ objectdef obj_Cargo
 					wait 2
 				}
 				while ${usedSpace} < 0
-				;;UI:UpdateConsole["DEBUG: TransferListToShipWithContainers: used space = ${usedSpace}"]
+				;;Logger:Log["DEBUG: TransferListToShipWithContainers: used space = ${usedSpace}"]
 				if ${Math.Calc[${totalSpace}-${usedSpace}]} > ${Math.Calc[${totalSpace}*0.98]}
 				{
-					UI:UpdateConsole["DEBUG: TransferListToShipWithContainers: Container full."]
+					Logger:Log["DEBUG: TransferListToShipWithContainers: Container full."]
 					break
 				}
 			}
@@ -982,7 +977,7 @@ objectdef obj_Cargo
 			qty:Set[${This.QuantityToMove[${This.CargoToTransfer.Get[${idx}]},0]}]
 			if ${qty} > 0
 			{
-				UI:UpdateConsole["TransferListToShipWithContainers: Loading Cargo: ${qty} units (${Math.Calc[${qty} * ${This.CargoToTransfer.Get[${idx}].Volume}]}m3) of ${This.CargoToTransfer.Get[${idx}].Name}"]
+				Logger:Log["TransferListToShipWithContainers: Loading Cargo: ${qty} units (${Math.Calc[${qty} * ${This.CargoToTransfer.Get[${idx}].Volume}]}m3) of ${This.CargoToTransfer.Get[${idx}].Name}"]
 				This.CargoToTransfer.Get[${idx}]:MoveTo[MyShip, CargoHold, ${qty}]
 				wait 15
 			}
@@ -992,7 +987,7 @@ objectdef obj_Cargo
 			}
 			;if ${Ship.CargoFull}
 			;{
-			;	UI:UpdateConsole["DEBUG: TransferListToShipWithContainers: Ship Cargo: ${Ship.CargoFreeSpace} < ${Ship.CargoMinimumFreeSpace}"]
+			;	Logger:Log["DEBUG: TransferListToShipWithContainers: Ship Cargo: ${Ship.CargoFreeSpace} < ${Ship.CargoMinimumFreeSpace}"]
 			;	break
 			;}
 		}
@@ -1033,8 +1028,8 @@ objectdef obj_Cargo
 						QuantityToMove:Set[${CargoIterator.Value.Quantity}]
 					}
 
-					UI:UpdateConsole["TransferListToShip: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name}"]
-					UI:UpdateConsole["TransferListToShip: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
+					Logger:Log["TransferListToShip: Loading Cargo: ${QuantityToMove} units (${Math.Calc[${QuantityToMove} * ${CargoIterator.Value.Volume}]}m3) of ${CargoIterator.Value.Name}"]
+					Logger:Log["TransferListToShip: Loading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}"]
 					if ${QuantityToMove} > 0
 					{
 						CargoIterator.Value:MoveTo[MyShip, CargoHold, ${QuantityToMove}]
@@ -1043,7 +1038,7 @@ objectdef obj_Cargo
 
 					if ${Ship.CargoFreeSpace} < ${Ship.CargoMinimumFreeSpace}
 					{
-						UI:UpdateConsole["DEBUG: TransferListToShip: Ship Cargo: ${Ship.CargoFreeSpace} < ${Ship.CargoMinimumFreeSpace}"]
+						Logger:Log["DEBUG: TransferListToShip: Ship Cargo: ${Ship.CargoFreeSpace} < ${Ship.CargoMinimumFreeSpace}"]
 						break
 					}
 				}
@@ -1053,7 +1048,7 @@ objectdef obj_Cargo
 		}
 		else
 		{
-			UI:UpdateConsole["DEBUG: obj_Cargo:TransferListToShip: Nothing found to move"]
+			Logger:Log["DEBUG: obj_Cargo:TransferListToShip: Nothing found to move"]
 		}
 	}
 
@@ -1113,36 +1108,6 @@ objectdef obj_Cargo
 			This:FindShipCargo[CATEGORYID_ORE]
 		}
 		call This.TransferListToPOSCorpHangar "LargeShipAssemblyArray"
-
-		This.CargoToTransfer:Clear[]
-	}
-
-	function TransferOreToCompressionArray()
-	{
-		if ${CompressionArray.IsReady}
-		{
-			if ${Entity[${CompressionArray.ActiveCan}].Distance} > CORP_HANGAR_LOOT_RANGE
-			{
-				call Ship.Approach ${CompressionArray.ActiveCan} CORP_HANGAR_LOOT_RANGE
-			}
-		}
-		else
-		{
-			UI:ConsoleUpdate["No Compression Array found - nothing moved"]
-			return
-		}
-
-		call Ship.OpenCargo
-
-		if ${MyShip.HasOreHold}
-		{
-			MyShip:GetOreHoldCargo[This.CargoToTransfer]
-		}
-		else
-		{
-			This:FindShipCargo[CATEGORYID_ORE]
-		}
-		call This.TransferListToPOSCorpHangar "CompressionArray"
 
 		This.CargoToTransfer:Clear[]
 	}
@@ -1222,7 +1187,7 @@ objectdef obj_Cargo
 
 	function TransferOreToJetCan()
 	{
-		UI:UpdateConsole["Transferring Ore to JetCan"]
+		Logger:Log["Transferring Ore to JetCan"]
 
 		call Ship.OpenCargo
 
@@ -1243,14 +1208,14 @@ objectdef obj_Cargo
 	{
 		while !${Station.Docked}
 		{
-			UI:UpdateConsole["obj_Cargo: Waiting for dock..."]
+			Logger:Log["obj_Cargo: Waiting for dock..."]
 			wait 10
 		}
 
 		; Need to cycle the the cargohold after docking to update the list.
 		call This.CloseHolds
 
-		UI:UpdateConsole["Transferring Ore to Station Hangar"]
+		Logger:Log["Transferring Ore to Station Hangar"]
 		call This.OpenHolds
 
 		if ${MyShip.HasOreHold}
@@ -1282,8 +1247,8 @@ objectdef obj_Cargo
 			call Station.OpenHangar
 			do
 			{
-				UI:UpdateConsole["TransferListToStationHangar: Unloading Cargo: ${CargoIterator.Value.Name} x ${CargoIterator.Value.Quantity}"]
-				UI:UpdateConsole["TransferListToStationHangar: Unloading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}", LOG_DEBUG]
+				Logger:Log["TransferListToStationHangar: Unloading Cargo: ${CargoIterator.Value.Name} x ${CargoIterator.Value.Quantity}"]
+				Logger:Log["TransferListToStationHangar: Unloading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}", LOG_DEBUG]
 				if ${CargoIterator.Value.GroupID} == GROUPID_SECURE_CONTAINER
 				{
 					call This.TransferContainerToHangar ${CargoIterator.Value.ID}
@@ -1297,14 +1262,14 @@ objectdef obj_Cargo
 			while ${CargoIterator:Next(exists)}
 			if ${ListToMove.Used}
 			{
-				UI:UpdateConsole["Moving ${ListToMove.Used} items to hangar."]
+				Logger:Log["Moving ${ListToMove.Used} items to hangar."]
 				EVE:MoveItemsTo[ListToMove, MyStationHangar, Hangar]
 				wait 10
 			}
 		}
 		else
 		{
-			UI:UpdateConsole["DEBUG: obj_Cargo:TransferListToStationHangar: Nothing found to move"]
+			Logger:Log["DEBUG: obj_Cargo:TransferListToStationHangar: Nothing found to move"]
 		}
 		EVE:StackItems[MyStationHangar,Hangar]
 
@@ -1333,31 +1298,30 @@ objectdef obj_Cargo
 		{
 			do
 			{
-				UI:UpdateConsole["TransferListToShipCorporateHangar: Unloading Cargo: ${CargoIterator.Value.Name} x ${CargoIterator.Value.Quantity}"]
-				UI:UpdateConsole["TransferListToShipCorporateHangar: Unloading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}", LOG_DEBUG]
+				Logger:Log["TransferListToShipCorporateHangar: Unloading Cargo: ${CargoIterator.Value.Name} x ${CargoIterator.Value.Quantity}"]
+				Logger:Log["TransferListToShipCorporateHangar: Unloading Cargo: DEBUG: TypeID = ${CargoIterator.Value.TypeID}, GroupID = ${CargoIterator.Value.GroupID}", LOG_DEBUG]
 
 				ListToMove:Insert[${CargoIterator.Value.ID}]
-				if ${ListToMove.Used}
-				{
-					UI:UpdateConsole["Moving ${ListToMove.Used} items to hangar."]
-					CargoIterator.Value:MoveTo[${dest}, FleetHangar, ${CargoIterator.Value.Quantity}]
-					;EVE:MoveItemsTo[ListToMove, ${dest}, CorpHangars]
-					wait 10
-					;EVEWindow[ByItemID, ${dest}]:StackAll
-				}
+
 			}
 			while ${CargoIterator:Next(exists)}
-
+			if ${ListToMove.Used}
+			{
+				Logger:Log["Moving ${ListToMove.Used} items to hangar."]
+				EVE:MoveItemsTo[ListToMove, ${dest}, CorpHangars]
+				wait 10
+				EVEWindow[ByItemID, ${dest}]:StackAll
+			}
 		}
 		else
 		{
-			UI:UpdateConsole["DEBUG: obj_Cargo:TransferListToShipCorporateHangar: Nothing found to move"]
+			Logger:Log["DEBUG: obj_Cargo:TransferListToShipCorporateHangar: Nothing found to move"]
 		}
 	}
 
 	function TransferOreToShipCorpHangar(int64 dest)
 	{
-		UI:UpdateConsole["Transferring Ore to Corp Hangar"]
+		Logger:Log["Transferring Ore to Corp Hangar"]
 		;call Ship.OpenCargo
 
 		if ${MyShip.HasOreHold}
@@ -1377,14 +1341,14 @@ objectdef obj_Cargo
 	{
 		while !${Station.Docked}
 		{
-			UI:UpdateConsole["obj_Cargo: Waiting for dock..."]
+			Logger:Log["obj_Cargo: Waiting for dock..."]
 			wait 10
 		}
 
 		/* Need to cycle the the cargohold after docking to update the list. */
 		call This.CloseHolds
 
-		UI:UpdateConsole["Transferring Cargo to Station Hangar"]
+		Logger:Log["Transferring Cargo to Station Hangar"]
 		call This.OpenHolds
 
 		/* FOR NOW move all cargo.  Add filtering later */
@@ -1403,7 +1367,7 @@ objectdef obj_Cargo
 		/* Need to cycle the the cargohold after docking to update the list. */
 		call This.CloseHolds
 
-		UI:UpdateConsole["Transferring Cargo to Corp Hangar Array"]
+		Logger:Log["Transferring Cargo to Corp Hangar Array"]
 		call This.OpenHolds
 
 		/* FOR NOW move all cargo.  Add filtering later */
@@ -1429,7 +1393,7 @@ objectdef obj_Cargo
 			/* Need to cycle the the cargohold after docking to update the list. */
 			call This.CloseHolds
 
-			UI:UpdateConsole["Transferring Cargo from Station Hangar"]
+			Logger:Log["Transferring Cargo from Station Hangar"]
 			call This.OpenHolds
 
 			/* FOR NOW move all cargo.  Add filtering later */
@@ -1450,18 +1414,18 @@ objectdef obj_Cargo
 				if ${This.CargoToTransfer.Used} > 0
 				{
 					This.CargoToTransfer:Clear[]
-					UI:UpdateConsole["Could not carry all the cargo from the station hangar"]
+					Logger:Log["Could not carry all the cargo from the station hangar"]
 					m_LastTransferComplete:Set[FALSE]
 				}
 				else
 				{
-					UI:UpdateConsole["Transfered all cargo from the station hangar"]
+					Logger:Log["Transfered all cargo from the station hangar"]
 					m_LastTransferComplete:Set[TRUE]
 				}
 			}
 			else
 			{	/* Only set m_LastTransferComplete if we actually transfered something */
-				UI:UpdateConsole["Couldn't find any cargo in the station hangar"]
+				Logger:Log["Couldn't find any cargo in the station hangar"]
 				m_LastTransferComplete:Set[FALSE]
 			}
 		}
@@ -1479,7 +1443,7 @@ objectdef obj_Cargo
 			/* Need to cycle the the cargohold after docking to update the list. */
 			call This.CloseHolds
 
-			UI:UpdateConsole["Transferring Item (${typeID}) from Station Hangar"]
+			Logger:Log["Transferring Item (${typeID}) from Station Hangar"]
 			call This.OpenHolds
 
 			variable index:item cargoIndex
@@ -1492,7 +1456,7 @@ objectdef obj_Cargo
 			{
 				do
 				{
-					UI:UpdateConsole["DEBUG: ${cargoIterator.Value.Type}(${cargoIterator.Value.TypeID})"]
+					Logger:Log["DEBUG: ${cargoIterator.Value.Type}(${cargoIterator.Value.TypeID})"]
 					if ${typeID} == ${cargoIterator.Value.TypeID}
 					{
 						This.CargoToTransfer:Insert[${cargoIterator.Value.ID}]
@@ -1529,18 +1493,18 @@ objectdef obj_Cargo
 				if ${This.CargoToTransfer.Used} > 0
 				{
 					This.CargoToTransfer:Clear[]
-					UI:UpdateConsole["Could not carry all the cargo from the station hangar"]
+					Logger:Log["Could not carry all the cargo from the station hangar"]
 					m_LastTransferComplete:Set[FALSE]
 				}
 				else
 				{
-					UI:UpdateConsole["Transfered all cargo from the station hangar"]
+					Logger:Log["Transfered all cargo from the station hangar"]
 					m_LastTransferComplete:Set[TRUE]
 				}
 			}
 			else
 			{	/* Only set m_LastTransferComplete if we actually transfered something */
-				UI:UpdateConsole["Couldn't find any cargo in the station hangar"]
+				Logger:Log["Couldn't find any cargo in the station hangar"]
 				m_LastTransferComplete:Set[FALSE]
 			}
 		}
@@ -1550,14 +1514,14 @@ objectdef obj_Cargo
    {
 	  if !${Station.Docked}
 	  {
-		 UI:UpdateConsole["ERROR: obj_Cargo.TransferItemTypeToHangar: Must be docked!"]
+		 Logger:Log["ERROR: obj_Cargo.TransferItemTypeToHangar: Must be docked!"]
 		 return
 	  }
 
 	  /* Need to cycle the the cargohold after docking to update the list. */
 	  call This.CloseHolds
 
-	  UI:UpdateConsole["Transferring Cargo to Station Hangar"]
+	  Logger:Log["Transferring Cargo to Station Hangar"]
 	  call This.OpenHolds
 
 	  This:FindShipCargoByType[${typeID}]
